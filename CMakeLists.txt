@@ -32,7 +32,7 @@ set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprec
 set(kglobalaccel_version_header "${CMAKE_CURRENT_BINARY_DIR}/src/kglobalaccel_version.h")
 ecm_setup_version(PROJECT VARIABLE_PREFIX KGLOBALACCEL
                         VERSION_HEADER "${kglobalaccel_version_header}"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6GlobalAccelConfigVersion.cmake"
+			PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/SonicFrameworksGlobalAccelConfigVersion.cmake"
                         SOVERSION 6)
 
 # Dependencies
@@ -61,21 +61,21 @@ if(BUILD_TESTING)
 endif()
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6GlobalAccel")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/SonicFrameworksGlobalAccel")
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KF6GlobalAccelConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6GlobalAccelConfig.cmake"
+	"${CMAKE_CURRENT_SOURCE_DIR}/SonicFrameworksGlobalAccelConfig.cmake.in"
+	"${CMAKE_CURRENT_BINARY_DIR}/SonicFrameworksGlobalAccelConfig.cmake"
     PATH_VARS KDE_INSTALL_DBUSINTERFACEDIR
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/KF6GlobalAccelConfig.cmake"
-                "${CMAKE_CURRENT_BINARY_DIR}/KF6GlobalAccelConfigVersion.cmake"
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/SonicFrameworksGlobalAccelConfig.cmake"
+	"${CMAKE_CURRENT_BINARY_DIR}/SonicFrameworksGlobalAccelConfigVersion.cmake"
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel)
 
-install(EXPORT KF6GlobalAccelTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6GlobalAccelTargets.cmake NAMESPACE KF6::)
+install(EXPORT KF6GlobalAccelTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE SonicFrameworksGlobalAccelTargets.cmake NAMESPACE KF6::)
 
 
 install(FILES ${kglobalaccel_version_header}

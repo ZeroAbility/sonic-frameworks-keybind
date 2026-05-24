@@ -11,8 +11,8 @@ portingAid: false
 deprecated: false
 release: true
 libraries:
-    - cmake: "KF6::GlobalAccel"
-cmakename: KF6GlobalAccel
+    - cmake: "SonicFrameworksGlobalAccel"
+cmakename: SonicFrameworksGlobalAccel
 
 public_lib: true
 group: Frameworks
